@@ -17,7 +17,7 @@ Se descartó error de programación y se auditó la capa física. Se identificó
 
 **Solución:**
 Se forzaron las entradas físicas una por una desde campo y se monitoreó la Watch Table en TIA Portal para mapear empíricamente cada señal. Se reasignaron los tags (%I / %Q) para reflejar el ruteo real del hardware.
-
+![Tablero S7-1500](planta_clasifiacion_2.jpg)
 ---
 
 ## Caso 2 — Control secuencial con instrumentación incompleta
@@ -31,7 +31,7 @@ El módulo de perforación carecía de sensores de final de carrera en el eje Z,
 
 **Solución:**
 Se implementó una secuencia en lazo abierto mediante temporizadores IEC (TON/TOF), condicionada al único sensor disponible: el de sujeción lateral del empujador. Esto garantizaba que la broca no iniciara su descenso sin confirmación física de que la pieza estaba correctamente sujeta.
-
+![Estación de clasificación en operación](planta_clasificacion1.jpg)
 ---
 
 ## Caso 3 — Migración de arquitectura y acondicionamiento de señal analógica
@@ -45,7 +45,7 @@ La lectura de señales analógicas no funcionaba sobre el S7-300 existente. Adic
 
 **Solución:**
 Se migró el control al S7-1500. Se identificó empíricamente la configuración correcta de los canales analógicos (voltaje vs. corriente) contrastando el diagrama físico del módulo con la parametrización en TIA Portal. La señal del sensor de nivel se escaló mediante bloques NORM_X y SCALE_X para obtener valores en unidades de ingeniería, ajustando el límite superior al valor real medido del transductor en lugar del valor teórico estándar.
-
+![Estación Processing](planta_processing.png)
 ---
 
 ## Electrotecnia industrial
